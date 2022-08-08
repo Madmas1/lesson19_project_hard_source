@@ -22,6 +22,25 @@ class MovieService:
     def create(self, movie_d):
         return self.dao.create(movie_d)
 
+    def update_partial(self, movie_d):
+        mid = movie_d.get("id")
+        movie = self.dao.get_one(mid)
+
+        if "title" in movie_d:
+            movie.title = movie_d.get("title")
+        if "description" in movie_d:
+            movie.description = movie_d.get("description")
+        if "trailer" in movie_d:
+            movie.trailer = movie_d.get("trailer")
+        if "year" in movie_d:
+            movie.year = movie_d.get("year")
+        if "rating" in movie_d:
+            movie.rating = movie_d.get("rating")
+        if "genre_id" in movie_d:
+            movie.genre_id = movie_d.get("genre_id")
+        if "movie_id" in movie_d:
+            movie.movie_id = movie_d.get("movie_id")
+            
     def update(self, movie_d):
         self.dao.update(movie_d)
         return self.dao

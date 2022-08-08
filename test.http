@@ -1,0 +1,31 @@
+POST http://127.0.0.1:10001/users/
+Accept: application/json
+Content-Type: : application/json
+
+{
+        "username": "new_admin",
+        "password": "12345",
+        "role": "admin"
+}
+
+#####
+
+POST http://127.0.0.1:10001/auth/
+Accept: application/json
+Content-Type: : application/json
+
+{
+        "username": "new_admin",
+        "password": "12345"
+
+}
+
+#####
+
+PUT http://127.0.0.1:10001/auth/
+Accept: application/json
+Content-Type: : application/json
+
+{
+    "refresh_token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6Im5ld19hZG1pbiIsInVzZXJfcm9sZSI6ImFkbWluIiwiZXhwIjoxNjY3MjQzODM3fQ.pRciCCMjC1-VMHd6pAdjs_vC_cF76fXjOWo_V8qYvgQ"
+}

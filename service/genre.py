@@ -5,8 +5,8 @@ class GenreService:
     def __init__(self, dao: GenreDAO):
         self.dao = dao
 
-    def get_one(self, bid):
-        return self.dao.get_one(bid)
+    def get_one(self, gid):
+        return self.dao.get_one(gid)
 
     def get_all(self):
         return self.dao.get_all()
@@ -17,6 +17,15 @@ class GenreService:
     def update(self, genre_d):
         self.dao.update(genre_d)
         return self.dao
+
+    def update_partial(self, genre_d):
+        gid = genre_d.get("id")
+        genre = self.dao.get_one(gid)
+
+        if "name" in genre_d:
+            genre.title = genre_d.get("name")
+
+        self.dao.update(genre)
 
     def delete(self, rid):
         self.dao.delete(rid)

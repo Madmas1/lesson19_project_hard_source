@@ -1,5 +1,6 @@
 GET http://127.0.0.1:10001/movies/
 Accept: application/json
+Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6Im5ld19hZG1pbiIsInVzZXJfcm9sZSI6ImFkbWluIiwiZXhwIjoxNjY3NzU3NjU3fQ.AjahrJznkwdJN26dvU7nyLY-l-Et-3y8wvvkLkgPtwg
 
 ###
 
@@ -47,6 +48,7 @@ POST http://127.0.0.1:10001/movies/
 Accept: application/json
 Content-Type: application/json
 
+
 {
   "title": "Гарри Поттер мой кумир!",
   "trailer": "таким фильмам не нужны трейлеры",
@@ -92,3 +94,28 @@ Content-Type: application/json
 ###
 
 DELETE http://127.0.0.1:10001/movies/21
+
+
+###
+POST http://127.0.0.1:10001/users/
+Accept: application/json
+Content-Type: application/json
+
+{
+  "username": "test",
+  "password": "bonk",
+  "role": "user"
+
+}
+
+###
+
+POST http://127.0.0.1:10001/directors/
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": 21,
+  "name": "Тайко Вайтити"
+
+}
